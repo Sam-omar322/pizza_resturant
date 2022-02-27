@@ -1,3 +1,7 @@
+html, body {
+    overflow-x: hidden;
+}
+
 a {
     text-decoration: none;
 }
@@ -5,4 +9,28 @@ a {
 button:focus, input:focus {
     box-shadow: none !important;
     outline: none !important;
+}
+
+.custom-btn-primary-1 {
+    background-color: $primary-color-2;
+    color: $light-color;
+    font-family: "janna";
+    border: 1px solid transparent;
+    transition: all 0.3s ease;
+    &:hover {
+        color: $bg-primary-color;
+    }
+}
+
+.custom-btn-primary-2 {
+    background-color: transparent;
+    border: 1px solid $light-color;
+    font-family: "janna";
+    color: $light-color;
+    transition: all 0.3s ease;
+    &:hover {
+        background-color: $primary-color-1;
+        border: 1px solid transparent;
+        color: $bg-primary-color;
+    }
 }
