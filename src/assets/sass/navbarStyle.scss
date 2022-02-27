@@ -1,0 +1,78 @@
+.navbar {
+    background-color: $bg-primary-color;
+    .navbar-nav {
+        li {
+            a {
+                color: $light-color !important;
+                position: relative;
+                &.active {
+                    color: $primary-color-1 !important;
+                }
+                &::after {
+                    content: "";
+                    position: absolute;
+                    width: 0%;
+                    height: 1px;
+                    display: block;
+                    bottom: -3%;
+                    transition: all 0.3s ease-in-out;
+                }
+                &:hover {
+                    color: $primary-color-1 !important;
+                    &::after {
+                        width: 90%;
+                        height: 1px;
+                        background-color: $primary-color-1;
+                    }
+                }
+            }
+        }
+    }
+    .form-inline {
+        .cart-icon {
+            position: relative;
+            &::before {
+                content: "0";
+                position: absolute;
+                color: $bg-primary-color;
+                background-color: $primary-color-1;
+                top: 0;
+                left: 0;
+                width: 15px;
+                height: 15px;
+                display: flex;
+                padding: 10px;
+                border-radius: 50%;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+        .btn {
+            padding: 0.5rem;
+        }
+    }
+}
+
+@media (max-width: 991px) {
+    .navbar {
+        .navbar-collapse {
+            margin-top: 20px;
+            padding-top: 10px;
+            border-top: 1px solid $light-color;
+        }
+        .navbar-nav {
+            li {
+                a {
+                    &:hover {
+                        &::after {
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+        }
+        .form-inline {
+            margin-top: 15px;
+        }
+    }
+}

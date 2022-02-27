@@ -1,0 +1,12 @@
+@font-face {
+    font-family: "janna";
+    src: local("janna"), url("../fonts/janna.woff") format("woff");
+}
+@font-face {
+    font-family: "janna bold";
+    src: local("janna bold"), url("../fonts/janna-bold.woff") format("woff");
+}
+
+body {
+    font-family: "janna bold";
+}
