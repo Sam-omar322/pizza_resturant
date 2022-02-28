@@ -1,5 +1,7 @@
 @import "./variables";
 @import "./global.scss";
-@import "./navbarStyle.scss";
-@import "./carouselStyle.scss";
+@import "./layout.scss";
+@import "./components/navbarStyle.scss";
+@import "./components/carouselStyle.scss";
+@import "./components/menuCardStyle.scss";
 @import "./fonts.scss";

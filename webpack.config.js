@@ -6,8 +6,7 @@ const optimizeCssAssetsWebpackPlugin = require('optimize-css-assets-webpack-plug
 module.exports = {
 
     entry: {
-        'app': './src/index.js',
-        "assets/js/test": "./src/assets/js/test"
+        'app': './src/index.js'
     },
 
     output: {
@@ -18,6 +17,7 @@ module.exports = {
 
     devServer: {
       contentBase: path.join(__dirname, "build"),
+      host: "192.168.1.15",
       open: true,
       port: 7878,
       writeToDisk: true,

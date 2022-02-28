@@ -2,7 +2,8 @@ html, body {
     overflow-x: hidden;
 }
 
-a {
+a,
+a:hover {
     text-decoration: none;
 }
 
@@ -11,12 +12,18 @@ button:focus, input:focus {
     outline: none !important;
 }
 
-.custom-btn-primary-1 {
-    background-color: $primary-color-2;
-    color: $light-color;
+.custom-btn-primary-1,
+.custom-btn-primary-2 {
     font-family: "janna";
+    color: $light-color;
+    cursor: pointer;
     border: 1px solid transparent;
     transition: all 0.3s ease;
+    padding: 0.75rem 1.25rem;
+}
+
+.custom-btn-primary-1 {
+    background-color: $primary-color-2;
     &:hover {
         color: $bg-primary-color;
     }
@@ -24,13 +31,37 @@ button:focus, input:focus {
 
 .custom-btn-primary-2 {
     background-color: transparent;
-    border: 1px solid $light-color;
-    font-family: "janna";
-    color: $light-color;
-    transition: all 0.3s ease;
+    border-color: $light-color;
     &:hover {
         background-color: $primary-color-1;
-        border: 1px solid transparent;
+        border-color: transparent;
         color: $bg-primary-color;
+    }
+}
+
+.section-header {
+    text-align: center;
+    .section-title {
+        font-size: 30px;
+        margin-bottom: 1.5rem;
+        .title-hint {
+            font-family: "janna bold";
+            color: $primary-color-2;
+        }
+    }
+    .section-desc {
+        font-size: 18px;
+        line-height: 2rem;
+        color: $bg-primary-color;
+        width: 50%;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 767px) {
+    .section-header {
+        .section-desc {
+            width: 320px;
+        }
     }
 }
