@@ -7,9 +7,29 @@ a:hover {
     text-decoration: none;
 }
 
-button:focus, input:focus {
+button:focus, input:focus, textarea:focus {
     box-shadow: none !important;
     outline: none !important;
+}
+
+.header-title {
+    font-size: 30px;
+    color: $primary-color-1;
+    margin-bottom: 10px;
+}
+.header-subtitle {
+    font-size: 40px;
+    line-height: 4rem;
+    margin: 0 0 25px;
+    color: $light-color;
+}
+.header-desc {
+    font-size: 18px;
+    line-height: 2rem;
+    color: $light-color;
+    width: 40%;
+    margin: 0 auto;
+    text-align: center;
 }
 
 .custom-btn-primary-1,
@@ -58,10 +78,28 @@ button:focus, input:focus {
     }
 }
 
+@media (max-width: 991px) {
+    .header-desc {
+        width: 500px;
+    }
+}
+
 @media (max-width: 767px) {
     .section-header {
         .section-desc {
             width: 320px;
         }
+    }
+    .header-subtitle {
+        font-size: 30px;
+        line-height: 2.5rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .header-desc {
+        width: 320px;
+        font-size: 15px;
+        line-height: 1.5rem;
     }
 }

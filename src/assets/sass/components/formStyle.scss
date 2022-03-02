@@ -1,0 +1,22 @@
+.form-contact {
+    .form-control {
+        padding: 15px 10px;
+        font-size: 15px;
+        height: 45px;
+        border-radius: 0;
+    }
+    .form-control:focus {
+        border-color: $primary-color-1;
+    }
+    .form-text {
+        min-height: 150px;
+    }
+    .submit-btn {
+        width: 100%;
+        background-color: $primary-color-1;
+        color: $bg-primary-color;
+        &:hover {
+            color: $light-color;
+        }
+    }
+}

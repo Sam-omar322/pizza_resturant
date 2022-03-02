@@ -4,10 +4,10 @@
         li {
             a {
                 color: $light-color !important;
-                position: relative;
                 &.active {
                     color: $primary-color-1 !important;
                 }
+                position: relative;
                 &::after {
                     content: "";
                     position: absolute;

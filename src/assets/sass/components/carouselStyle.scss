@@ -10,25 +10,6 @@
     .carousel-inner {
         .carousel-item {
             text-align: center;
-            .header-title {
-                font-size: 30px;
-                color: $primary-color-1;
-                margin-bottom: 10px;
-            }
-            .header-subtitle {
-                font-size: 40px;
-                line-height: 4rem;
-                margin: 0 0 25px;
-                color: $light-color;
-            }
-            .header-desc {
-                font-size: 18px;
-                line-height: 2rem;
-                color: $light-color;
-                width: 40%;
-                margin: 0 auto;
-                text-align: center;
-            }
             .header-product {
                 text-align: right;
                 .header-desc {
@@ -38,33 +19,27 @@
             .btn-content {
                 margin-top: 50px;
             }
-            .item-1 {
-                background-image: url(../images/main-banner-1.png);
+            .item-1, .item-2, .item-3, .item-4 {
+                background-repeat: no-repeat;
                 position: relative;
                 background-size: cover;
                 height: 100vh;
+            }
+            .item-1 {
+                background-image: url(../images/main-banner-1.png);
             }
             .item-2 {
                 background-image: url(../images/main-banner-2.png);
-                position: relative;
-                background-size: cover;
-                height: 100vh;
             }
             .item-3 {
                 background-image: url(../images/main-banner-3.png);
-                position: relative;
-                background-size: cover;
-                height: 100vh;
             }
             .item-4 {
                 background-image: url(../images/main-banner-4.png);
-                position: relative;
-                background-size: cover;
-                height: 100vh;
             }
             .overlay {
                 position: absolute;
-                background-color: $bg-primary-color-opacity;
+                background-color: rgba($color: $bg-primary-color, $alpha: 0.6);
                 bottom: 0;
                 right: 0;
                 height: 100%;
@@ -81,13 +56,6 @@
     #headerCarousel {
         .carousel-inner {
             .carousel-item {
-                .header-subtitle {
-                    font-size: 30px;
-                    line-height: 2.5rem;
-                }
-                .header-desc {
-                    width: 310px;
-                }
                 .header-desc,
                 .header-subtitle,
                 .header-title,

@@ -1,0 +1,75 @@
+.feature-card {
+    border-radius: 12px;
+    border: none;
+    box-shadow: 0 0 2px 1px rgba($color: $bg-primary-color, $alpha: 0.4);
+    height: 420px;
+    cursor: pointer;
+    background-size: 100%;
+    background-position: top center;
+    background-repeat: no-repeat;
+    transition: all 1s ease;
+    margin-bottom: 30px;
+    &:hover {
+        background-size: 110%;
+    }
+    .overlay {
+        background-color: rgba($color: $bg-primary-color, $alpha: 0.6);
+        height: 100%;
+        border-radius: 12px;
+    }
+    .feature-banner {
+        background-color: $primary-color-2;
+        padding: 0.75rem;
+        margin-top: 30px;
+        color: $light-color;
+        width: 45%;
+        text-align: center;
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
+        h5 {
+            margin-bottom: 0;
+        }
+    }
+    .feature-desc {
+        color: $light-color;
+        padding: 0 45px;
+        margin-top: 30px;
+        .feature-name {
+            font-size: 24px;
+            margin-bottom: 12px;
+        }
+        .feature-type {
+            font-size: 28px;
+        }
+        .feature-amount {
+            font-size: 60px;
+        }
+    }
+    .custom-btn-primary-1 {
+        width: 130px;
+        text-align: center;
+        border-radius: 5px;
+        position: absolute;
+        bottom: 5%;
+        right: 50%;
+        transform: translateX(50%);
+    }
+}
+.card-1 {
+    background-image: url(../images/feature-card1.jpg);
+}
+.card-2 {
+    background-image: url(../images/feature-card2.png);
+}
+.card-3 {
+    background-image: url(../images/feature-card3.png);
+}
+
+@media (max-width: 991px) {
+    .feature-card {
+        height: 350px;
+        .feature-desc {
+            text-align: center;
+        }
+    }
+}

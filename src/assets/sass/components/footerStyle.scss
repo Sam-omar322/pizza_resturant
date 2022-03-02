@@ -1,0 +1,53 @@
+footer {
+    padding: 100px 0 0;
+    background-color: $bg-primary-color;
+    color: $light-color;
+    .footer-menu {
+        margin-bottom: 50px;
+        .footer-menu-title {
+            font-size: 18px;
+            margin-bottom: 25px;
+        }
+        .footer-menu-desc {
+            font-size: 15px;
+            line-height: 1.6rem;
+            font-family: "janna";
+            color: rgba($color: $light-color, $alpha: 0.5);
+        }
+        ul {
+            padding-right: 10px;
+            list-style: none;
+            li {
+                font-size: 14px;
+                margin-bottom: 10px;
+                a {
+                    color: $light-color;
+                    &:hover {
+                        color: $primary-color-1;
+                    }
+                }
+            }
+        }
+        .social-media {
+            li {
+                a {
+                    svg {
+                        fill: rgba($color: $light-color, $alpha: 0.5);
+                        &:hover {
+                            fill: $primary-color-1;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .social {
+        margin-bottom: 0;
+    }
+    .copyright {
+        margin-top: 80px;
+        text-align: center;
+        padding: 1rem;
+        border-top: 0.5px solid rgba($color: $light-color, $alpha: 0.5);
+    }
+}

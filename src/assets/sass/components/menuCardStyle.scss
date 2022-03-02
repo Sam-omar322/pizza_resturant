@@ -3,7 +3,7 @@
     border-radius: 0;
     position: relative;
     border: none;
-    box-shadow: 0 0 2px 1px $bg-primary-color-opacity;
+    box-shadow: 0 0 2px 1px rgba($color: $bg-primary-color, $alpha: 0.5);
     margin-bottom: 40px;
     .price {
         position: absolute;

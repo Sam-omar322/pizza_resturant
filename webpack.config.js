@@ -2,11 +2,13 @@ const path = require('path');
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const miniCssExtractPlugin = require("mini-css-extract-plugin");
 const optimizeCssAssetsWebpackPlugin = require('optimize-css-assets-webpack-plugin');
-
+const htmlWebpackPartialsPlugin = require("html-webpack-partials-plugin");
+const navbarAndFooter = ['index.html', "about.html", "contact.html", "pizza.html"];
 module.exports = {
 
     entry: {
-        'app': './src/index.js'
+        'app': './src/index.js',
+        "./assets/js/formValidation.js": "./src/assets/js/formValidation.js"
     },
 
     output: {
@@ -77,20 +79,42 @@ module.exports = {
     plugins: [
         new HtmlWebpackPlugin({
           template: "./src/index.html",
-          filename: "index.html"
+          filename: "index.html",
+          chunks: ["app"]
         }),
         new HtmlWebpackPlugin({
           template: "./src/pages/pizza.html",
-          filename: "pizza.html"
+          filename: "pizza.html",
+          chunks: ["app"]
         }),
         new HtmlWebpackPlugin({
           template: "./src/pages/about.html",
-          filename: "about.html"
+          filename: "about.html",
+          chunks: ["app"]
         }),
         new HtmlWebpackPlugin({
           template: "./src/pages/contact.html",
-          filename: "contact.html"
+          filename: "contact.html",
+          chunks: ["app", "./assets/js/formValidation.js"]
         }),
+
+        // html partials
+        new htmlWebpackPartialsPlugin({
+          path: path.join(__dirname, "./src/components/navbar.html"),
+          location: 'navbar',
+          template_filename: navbarAndFooter
+        }),
+        new htmlWebpackPartialsPlugin({
+          path: path.join(__dirname, "./src/components/footerPage.html"),
+          location: 'footerPage',
+          template_filename: navbarAndFooter
+        }),
+        new htmlWebpackPartialsPlugin({
+          path: path.join(__dirname, "./src/components/form.html"),
+          location: 'formContent',
+          template_filename: ["contact.html"]
+        }),
+
         // CSS
         new optimizeCssAssetsWebpackPlugin({}),
         new miniCssExtractPlugin({
