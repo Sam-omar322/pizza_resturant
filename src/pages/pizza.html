@@ -8,7 +8,81 @@
 </head>
 <body>
     <navbar></navbar>
-    <h1>pizza</h1>
+    <div class="pizza-page">
+        <header class="header-top">
+            <div class="overlay">
+                <div class="container">
+                    <h1 class="header-subtitle">شراء بيتزا</h1>
+                    <ol class="breadcrumb custom-breadcrumb">
+                        <li><a href=".">الصفحة الرئيسية</a></li>
+                        <li class="active">بيتزا</li>
+                    </ol>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <div class="product">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-7 col-xl-6 offset-xl-1">
+                            <div class="product-img-content">
+                                <div id="carouselProduct" class="carousel slide" data-ride="carousel">
+                                    <ol class="carousel-indicators order-2 order-sm-1">
+                                        <li data-target="#carouselProduct" data-slide-to="0" class="item-1 active"></li>
+                                        <li data-target="#carouselProduct" data-slide-to="1" class="item-2"></li>
+                                        <li data-target="#carouselProduct" data-slide-to="2" class="item-3"></li>
+                                    </ol>
+                                    <div class="carousel-inner order-1 order-sm-2">
+                                        <div class="carousel-item item-1 active"></div>
+                                        <div class="carousel-item item-2"></div>
+                                        <div class="carousel-item item-3"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-5">
+                            <div class="product-summary">
+                                <div class="product-name">
+                                    <h3>بيتزا مارجريت</h3>
+                                </div>
+                                <div class="product-price">
+                                    <h2 id="low-high-price"></h2>
+                                </div>
+                                <div class="product-desc">
+                                    <p>
+                                        هي الشكل الأساسي المعروف لطبق البيتزا، أي تلك التي تحتوي على صلصة بندورة بسيطة منكَّهة بالأعشاب ومغطّاة بالجبنة، وقد سُمّيت بهذا الاسم نسبةً إلى الملكة مارجريتا؛ حيث ابتكر الطاهي روفائيل اسبوزيتو هذا الطبق بمناسبة قدوم الملكة مارجريتا إلى مدينة نابولي. 
+                                    </p>
+                                </div>
+                                <form>
+                                    <div class="p-select">
+                                        <h5>الحجم : </h5>
+                                        <select id="product-size" class="form-control" name="p-size" id="p-size" required>
+                                            <option value="0" selected>أختر الحجم</option>
+                                            <option value="sm">صغير</option>
+                                            <option value="md">وسط</option>
+                                            <option value="lg">كبير</option>
+                                        </select>
+                                    </div>
+                                    <div class="product-price">
+                                        <h2 id="show-price"></h2>
+                                    </div>
+                                    <div class="p-select">
+                                        <h5>عدد المطلوب : </h5>
+                                        <input id="product-quantity" type="text" class="form-control" name="p-quantity" id="p-quantity" min="1" max="99" pattern="\d*" maxlength="2" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" required/>
+                                    </div>
+                                    <div class="add-to-cart">
+                                        <button id="add-to-cart-btn" class="custom-btn-primary-1 btn-with-icon" onsubmit="productForm(e)"><img src="../assets/images/cart.svg" alt="icon" /> أضف الى السلة</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
     <footerPage></footerPage>
 </body>
 </html>

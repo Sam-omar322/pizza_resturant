@@ -8,7 +8,9 @@ module.exports = {
 
     entry: {
         'app': './src/index.js',
-        "./assets/js/formValidation.js": "./src/assets/js/formValidation.js"
+        "./assets/js/formValidation.js": "./src/assets/js/formValidation.js",
+        "./assets/js/productForm.js": "./src/assets/js/productForm.js"
+
     },
 
     output: {
@@ -19,7 +21,6 @@ module.exports = {
 
     devServer: {
       contentBase: path.join(__dirname, "build"),
-      host: "192.168.1.15",
       open: true,
       port: 7878,
       writeToDisk: true,
@@ -85,7 +86,7 @@ module.exports = {
         new HtmlWebpackPlugin({
           template: "./src/pages/pizza.html",
           filename: "pizza.html",
-          chunks: ["app"]
+          chunks: ["app", "./assets/js/productForm.js"]
         }),
         new HtmlWebpackPlugin({
           template: "./src/pages/about.html",

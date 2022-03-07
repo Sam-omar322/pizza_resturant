@@ -23,25 +23,24 @@
 
 // contact page
 .contact-page {
-    header {
+    .header-top {
         background-image: url(../images/contact-header-bg.jpg);
-        background-repeat: no-repeat;
-        background-size: cover;
-        .overlay {
-            padding: 150px 0;
-            background-color: rgba($color: $bg-primary-color, $alpha: 0.5);
-            .header-subtitle {
-                color: $primary-color-1;
-                text-align: center;
-            }
-        }
     }
+
     .contact-info {
         padding: 80px 0 40px;
         .infos {
             margin-bottom: 60px;
             .delivery, .address {
                 margin-bottom: 35px;
+            }
+            #places {
+                height: 45px;
+                width: 340px;
+                margin-top: 20px;
+                &:focus {
+                    border-color: $primary-color-1;
+                }
             }
             .contact-info-title {
                 font-size: 24px;
@@ -59,8 +58,237 @@
             }
         }
     }
+
     .map-content {
         height: 300px;
         margin-top: 50px;
+    }
+}
+
+// about page
+.about-page {
+    .header-top {
+        background-image: url(../images/about-img.jpg);
+        background-position: center;
+    }
+
+    .about-pizza {
+        display: flex;
+        .img-content img {
+            width: 100%;
+            height: 457px;
+        }
+        .about-content {
+            height: 100%;
+            width: 100%;
+            padding: 8% 7%;
+            .about-title {
+                font-size: 32px;
+                margin-bottom: 30px;
+                color: $primary-color-1;
+                text-align: center;
+            }
+            .about-desc {
+                font-size: 16px;
+                line-height: 1.8rem;
+            }
+        }
+    }
+
+    .our-chef {
+        padding: 100px 0;
+        background-color: $bg-primary-color;
+        color: $light-color;
+        .section-desc {
+            color: $light-color;
+        }
+
+        .chef-content {
+            margin-top: 50px;
+            .chef-card {
+                border: 1px solid $light-color;
+                border-radius: 10px;
+                margin-bottom: 30px;
+                padding: 30px 50px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                &:hover {
+                    border-color: $primary-color-1;
+                }
+                .chef-img {
+                    width: 130px;
+                    height: 130px;
+                    border-radius: 50%;
+                    margin-bottom: 30px;
+                }
+                .chef-name {
+                    color: $primary-color-1;
+                    margin-bottom: 0.75rem;
+                    font-size: 20px;
+                }
+                .chef-job {
+                    font-size: 18px;
+                    margin-bottom: 1.5rem;
+                }
+                .chef-desc {
+                    font-size: 16px;
+                    line-height: 1.5rem;
+                    text-align: center;
+                    color: rgba($color: $light-color, $alpha: 0.7);
+                    font-family: "janna";
+                }
+            }
+        }
+    }
+}
+
+// pizza page
+.pizza-page {
+    .header-top {
+        background-image: url(../images/shop-bg.png);
+        .overlay {
+            padding: 70px 0;
+        }
+    }
+
+    .product {
+        margin: 100px 0;
+        #carouselProduct {
+            display: flex;
+            height: 460px;
+            .item-1, .item-2, .item-3 {
+                background-repeat: no-repeat;
+                background-size: cover;
+                width: 100%;
+                height: 100%;
+            }
+            .item-1 {
+                background-image: url(../images/product-card1.png);
+            }
+            .item-2 {
+                background-image: url(../images/product-card2.png);
+            }
+            .item-3 {
+                background-image: url(../images/product-card3.png);
+            }
+            .carousel-indicators {
+                position: static;
+                margin: 0;
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                li {
+                    width: 80px;
+                    height: 80px;
+                    margin: 10px;
+                    border: 1px solid $bg-primary-color;
+                    &.active {
+                        border-color: $primary-color-1;
+                    }
+                }
+            }
+            .carousel-inner {
+                margin: 10px;
+                border: 1px solid $bg-primary-color;
+            }
+        }
+
+        .product-summary {
+            margin: 10px 0;
+            & > div {
+                margin-bottom: 17px;
+            }
+            .product-name h3 {
+                font-size: 30px;
+            }
+            .product-price h2 {
+                font-size: 24px;
+                color: $primary-color-2;
+                &#show-price {
+                    font-size: 18px;
+                }
+            }
+            .product-desc p {
+                font-size: 14px;
+                line-height: 1.5rem;
+                margin-bottom: 10px;
+            }
+            form {
+                & > div {
+                    margin-bottom: 17px;
+                }
+                .p-select h5 {
+                    font-size: 18px;
+                    margin-bottom: 10px;
+                }
+                .btn-with-icon {
+                    margin-top: 7px;
+                }
+            }
+        }
+    }
+}
+
+// media
+@media (max-width: 991px) {
+    .about-pizza {
+        .about-content {
+            .about-desc {
+                text-align: center;
+            }
+        }
+    }
+    .product {
+        #carouselProduct {
+            margin-bottom: 30px;
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .about-page {
+        .about-pizza {
+            .img-content {
+                img {
+                    height: auto;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 567px) {
+    .pizza-page {
+        .product {
+            #carouselProduct {
+                flex-direction: column;
+                height: auto;
+                .carousel-inner {
+                    height: 440px;
+                    margin: 0;
+                }
+                .carousel-indicators {
+                    flex-direction: row;
+                    li {
+                        width: 60px;
+                        height: 60px;
+                        margin: 15px 0 15px 20px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 400px) {
+    .pizza-page {
+        .product {
+            #carouselProduct {
+                .carousel-inner {
+                    height: 380px;
+                }
+            }
+        }
     }
 }
