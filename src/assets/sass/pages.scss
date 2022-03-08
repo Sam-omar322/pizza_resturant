@@ -1,3 +1,4 @@
+// home page
 .home-page {
     #menu {
         background-image: url(../images/main-banner-4.png);
@@ -31,20 +32,51 @@
         padding: 80px 0 40px;
         .infos {
             margin-bottom: 60px;
-            .delivery, .address {
+            .working, .address {
                 margin-bottom: 35px;
             }
-            #places {
-                height: 45px;
-                width: 340px;
-                margin-top: 20px;
-                &:focus {
-                    border-color: $primary-color-1;
+            // #places {
+            //     height: 45px;
+            //     width: 340px;
+            //     margin-top: 20px;
+            //     &:focus {
+            //         border-color: $primary-color-1;
+            //     }
+            // }
+            #accordionPlaces {
+                width: 85%;
+                .card {
+                    border-radius: 0;
+                    .card-header {
+                        padding: 0;
+                        height: 45px;
+                        .btn {
+                            width: 100%;
+                            &:focus {
+                                border: none;
+                            }
+                            .contact-info-title {
+                                font-size: 18px;
+                                text-align: right;
+                                margin-bottom: 0;
+                            }
+                        }
+                    }
+                    .card-body {
+                        padding: 0;
+                        ul {
+                            margin-bottom: 0;
+                            padding-right: 0;
+                            list-style: none;
+                            li {
+                                padding: 7px 10px;
+                                &:nth-child(even) {
+                                    background-color: rgba($color: $bg-primary-color, $alpha: 0.05);
+                                }
+                            }
+                        }
+                    }
                 }
-            }
-            .contact-info-title {
-                font-size: 24px;
-                margin-bottom: 20px;
             }
             .contact-info-list {
                 padding-right: 0;
@@ -153,7 +185,7 @@
     }
 
     .product {
-        margin: 100px 0;
+        margin-top: 100px;
         #carouselProduct {
             display: flex;
             height: 460px;
@@ -228,9 +260,97 @@
             }
         }
     }
+
+    .product-details {
+        padding: 100px 0;
+        .details-header {
+            display: flex;
+            margin-bottom: 20px;
+            h5 {
+                &:not(:last-child) {
+                    margin-left: 45px;
+                }
+                cursor: pointer;
+                font-size: 20px;
+                color: rgba($color: $bg-primary-color, $alpha: 0.5);
+                padding-bottom: 9px;
+                &:hover {
+                    color: rgba($color: $bg-primary-color, $alpha: 0.7);
+                }
+                &.active {
+                    color: $bg-primary-color;
+                    border-bottom: 3px solid $primary-color-2;
+                }
+            }
+        }
+        .details-content {
+            .details-content-item {
+                h2 {
+                    font-size: 25px;
+                    margin-bottom: 15px;
+                    color: $bg-primary-color;
+                }
+                p {
+                    font-size: 16px;
+                    line-height: 1.8rem;
+                    width: 60%;
+                    color: rgba($color: $bg-primary-color, $alpha: 0.7);
+                }
+                ul {
+                    padding-right: 10px;
+                    list-style: none;
+                    li {
+                        font-size: 16px;
+                        padding: 8px 14px;
+                        &:nth-child(odd) {
+                            background-color: rgba($color: $bg-primary-color, $alpha: 0.05);
+                        }
+                    }
+                }
+                .comments {
+                    .comment {
+                        display: flex;
+                        padding: 18px 0;
+                        border-bottom: 1px solid rgba($color: $bg-primary-color, $alpha: 0.3);
+                        img {
+                            width: 65px;
+                            height: 65px;
+                            border-radius: 50%;
+                            margin-left: 15px;
+                        }
+                        .comment-body {
+                            .customer-name {
+                                font-size: 16px;
+                                color: $bg-primary-color;
+                                display: inline;
+                            }
+                            .star-content {
+                                img {
+                                    width: 16px;
+                                    height: 16px;
+                                    margin-left: 1px;
+                                }
+                            }
+                            #customer-comment {
+                                margin: 10px 0 0;
+                                font-size: 16px;
+                                line-height: 1.4rem;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
 
 // media
+@media (max-width: 1199px) {
+    #accordionPlaces {
+        width: 100% !important;
+    }
+}
+
 @media (max-width: 991px) {
     .about-pizza {
         .about-content {
