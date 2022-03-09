@@ -342,6 +342,19 @@
             }
         }
     }
+
+    .related-products {
+        margin-top: 50px;
+        padding-bottom: 150px;
+        .related-content {
+            margin-top: 50px;
+            .pizza-card {
+                .card-img-top {
+                    height: 180px;
+                }
+            }
+        }
+    }
 }
 
 // media
@@ -364,6 +377,13 @@
             margin-bottom: 30px;
         }
     }
+    .details-content {
+        .details-content-item {
+            p {
+                width: 100% !important;
+            }
+        }
+    }
 }
 
 @media (max-width: 767px) {
@@ -372,6 +392,15 @@
             .img-content {
                 img {
                     height: auto;
+                }
+            }
+        }
+    }
+    .related-products {
+        .related-content {
+            .pizza-card {
+                .card-img-top {
+                    height: 220px !important;
                 }
             }
         }
@@ -401,12 +430,23 @@
     }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 406px) {
     .pizza-page {
         .product {
             #carouselProduct {
                 .carousel-inner {
                     height: 380px;
+                }
+            }
+        }
+    }
+    .product-details {
+        .details-header {
+            h5 {
+                font-size: 18px !important;
+                white-space: nowrap;
+                &:not(:last-child) {
+                    margin-left: 35px !important;
                 }
             }
         }

@@ -9,7 +9,8 @@ module.exports = {
     entry: {
         'app': './src/index.js',
         "./assets/js/formValidation.js": "./src/assets/js/formValidation.js",
-        "./assets/js/productForm.js": "./src/assets/js/productForm.js"
+        "./assets/js/productForm.js": "./src/assets/js/productForm.js",
+        "./assets/js/productDetails.js": "./src/assets/js/productDetails.js"
 
     },
 
@@ -86,7 +87,7 @@ module.exports = {
         new HtmlWebpackPlugin({
           template: "./src/pages/pizza.html",
           filename: "pizza.html",
-          chunks: ["app", "./assets/js/productForm.js"]
+          chunks: ["app", "./assets/js/productForm.js", "./assets/js/productDetails.js"]
         }),
         new HtmlWebpackPlugin({
           template: "./src/pages/about.html",
