@@ -1,12 +1,16 @@
 // pizza form submit fix user experience.
 // var
-var sizeValue = ["12.25", "18.55", "21.25"];
+var magaretPrice = ["8.25", "12.25", "18.00"];
+var vegetablePrice = ["12.25", "18.55", "21.25"];
+var chikenPrice = ["15.00", "18.00", "23.00"];
 var addToCartBtn = $("#add-to-cart-btn");
 var productSize = $("#product-size");
 var productQuantity = $("#product-quantity");
 
 // init form
-$("#low-high-price").html(`${sizeValue[0]} - ${sizeValue[2]} رس`);
+$("#margaret-price").html(`${magaretPrice[0]} - ${magaretPrice[2]} رس`);
+$("#vegetable-price").html(`${vegetablePrice[0]} - ${vegetablePrice[2]} رس`);
+$("#chiken-price").html(`${chikenPrice[0]} - ${chikenPrice[2]} رس`);
 productSize.val('0');
 productQuantity.val('');
 addToCartBtn.attr('disabled', 'true');
@@ -15,16 +19,24 @@ addToCartBtn.attr('disabled', 'true');
 $("#product-size").on("change", function() {
     switch(this.value) {
         case "sm":
-            $("#show-price").html(`${sizeValue[0]} رس`);
+            $("#margaret-new-price").html(`${magaretPrice[0]} رس`);
+            $("#vegetable-new-price").html(`${vegetablePrice[0]} رس`);
+            $("#chiken-new-price").html(`${chikenPrice[0]} رس`);
             break;
         case "md":
-            $("#show-price").html(`${sizeValue[1]} رس`);
+            $("#margaret-new-price").html(`${magaretPrice[1]} رس`);
+            $("#vegetable-new-price").html(`${vegetablePrice[1]} رس`);
+            $("#chiken-new-price").html(`${chikenPrice[1]} رس`);
             break;
         case "lg":
-            $("#show-price").html(`${sizeValue[2]} رس`);
+            $("#margaret-new-price").html(`${magaretPrice[2]} رس`);
+            $("#vegetable-new-price").html(`${vegetablePrice[2]} رس`);
+            $("#chiken-new-price").html(`${chikenPrice[2]} رس`);
             break;
         default:
-            $("#show-price").html("");
+            $("#margaret-new-price").html("");
+            $("#vegetable-new-price").html("");
+            $("#chiken-new-price").html("");
             break;
         }
     if (productSize.val() !== "0" && productQuantity.val() !== ""  && parseInt(productQuantity.val()) >= 1) {

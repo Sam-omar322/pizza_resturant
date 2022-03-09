@@ -3,7 +3,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const miniCssExtractPlugin = require("mini-css-extract-plugin");
 const optimizeCssAssetsWebpackPlugin = require('optimize-css-assets-webpack-plugin');
 const htmlWebpackPartialsPlugin = require("html-webpack-partials-plugin");
-const navbarAndFooter = ['index.html', "about.html", "contact.html", "pizza.html"];
+const navbarAndFooter = ['index.html', "about.html", "contact.html", "margaretPizza.html", "chikenPizza.html", "vegetablePizza.html"];
 module.exports = {
 
     entry: {
@@ -22,8 +22,8 @@ module.exports = {
 
     devServer: {
       contentBase: path.join(__dirname, "build"),
+      host: "192.168.1.10",
       open: true,
-      port: 7878,
       writeToDisk: true,
       stats: "errors-only"
     },
@@ -85,8 +85,18 @@ module.exports = {
           chunks: ["app"]
         }),
         new HtmlWebpackPlugin({
-          template: "./src/pages/pizza.html",
-          filename: "pizza.html",
+          template: "./src/pages/margaretPizza.html",
+          filename: "margaretPizza.html",
+          chunks: ["app", "./assets/js/productForm.js", "./assets/js/productDetails.js"]
+        }),
+        new HtmlWebpackPlugin({
+          template: "./src/pages/chikenPizza.html",
+          filename: "chikenPizza.html",
+          chunks: ["app", "./assets/js/productForm.js", "./assets/js/productDetails.js"]
+        }),
+        new HtmlWebpackPlugin({
+          template: "./src/pages/vegetablePizza.html",
+          filename: "vegetablePizza.html",
           chunks: ["app", "./assets/js/productForm.js", "./assets/js/productDetails.js"]
         }),
         new HtmlWebpackPlugin({
@@ -115,6 +125,11 @@ module.exports = {
           path: path.join(__dirname, "./src/components/form.html"),
           location: 'formContent',
           template_filename: ["contact.html"]
+        }),
+        new htmlWebpackPartialsPlugin({
+          path: path.join(__dirname, "./src/components/relatedProducts.html"),
+          location: 'related',
+          template_filename: ["margaretPizza.html", "chikenPizza.html", "vegetablePizza.html"]
         }),
 
         // CSS
